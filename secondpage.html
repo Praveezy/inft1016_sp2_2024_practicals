@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Experiments with CSS</title>
+
 <style type='text/css'> /* These styles will remove all padding and margins on h1, h2 and p elements, and make the headings red. */
 
 h1 {font-size: 1.33em;}
@@ -12,11 +13,42 @@ h1 {font-size: 1.33em;}
 }
 p {text-indent: 5em;}
 p.first {text-indent: 0em;}
+div#wrapper {  
+  width: 100px;  
+}  
+div#banner{  
+  margin-left: 10px;  
+  margin-right: 10px;  
+  padding-left: 10px;  
+  padding-right: 10px;  
+  border-left: 1px solid black;  
+  border-right: 1px solid black;  
+  width: 30px;
+}
+body {  
+  background: white url(image.gif) repeat fixed top left;  
+}
+@media screen {  
+  body {  
+    color: black;  
+    ;background-color: yellow;  
+  }  
+}
+
+@media print {  
+  body {  
+    color: black;  
+    background-color: white;  
+  }
+}
 
 </style>
 </head>
 <body>
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" title="Basic" />
    <div id="wrapper">
+    <div id="banner"></div>
+</div>
    <h1>Big page heading</h1>
    <p class="introduction">This is the introductory paragraph.</p>
   
