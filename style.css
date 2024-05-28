@@ -1,11 +1,3 @@
-h1 {font-size: 1.33em;}
-  h2 {font-size: 1.17em;} 
-  p {margin: 0 0 0.5em 0;}
-  h1, h2 {margin: 10pt 0 2pt 0;}
-  p:first-of-type {
-  font: 0.17em/1.33 Verdana, sans-serif;
-}
-p {text-indent: 5em;}
 
 :root{
 --base-font-color:rgb(131, 148, 150);
@@ -24,29 +16,6 @@ p {text-indent: 5em;}
 --c-cyan:rgb(42, 161, 152); 
 --c-green:rgb(133, 153 ,  0); 
 }
-</style>
-</head>
-<body>
-   <div id="wrapper">
-   <h1>Big page heading</h1>
-   <p class="introduction">This is the introductory paragraph.</p>
-  
-        
-   <p>Another paragraph waffling on about something, my favourite TV show, for three or four sentences.</p>
-  
-   <div id="films">
-      <h2><strong>A simple subhead:</strong> Films</h2>
-      <p class='recent'>A short discussion of the last three films I saw.</p>
-      <p>A discussion about my least favourite film</p>
 
-    <div class="movieQuote">
-       <blockquote>
-         <p> "May the Force be with you." </p>
-         <p class="source">XXX</p>
-      </blockquote>
-    </div> <!-- end of movieQuote div -->
-   </div> <!-- end of div#films -->
-   </div><!-- end of div#wrapper -->
-</body>
 
-</html>
+
