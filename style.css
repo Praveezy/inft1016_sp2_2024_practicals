@@ -1,73 +1,33 @@
-
-:root{
---base-font-color:rgb(131, 148, 150);
---secondary-font-color: rgb(88, 110, 117);
---emphasised-font :rgb(147, 161, 161);
-
---c-background-color: rgb(0, 43 ,54);
---c-background-highlights:rgb(7,  54,  66);
-
---c-yellow :rgb(181,137 , 0); 
---c-orange:rgb(203,  75,  22);  
---c-red:rgb(220, 50, 47);
---c-magenta:rgb(211,  54, 130 );
---c-violet:rgb(108, 113 ,196); 
---c-blue:rgb(38, 139, 210); 
---c-cyan:rgb(42, 161, 152); 
---c-green:rgb(133, 153 ,  0); 
+body{
+    font-family: Arial, sans-serif;
+    line-height:1.6;
+    margin:0;
+    padding:0;
+    background-color: #0ee6e6;
+    color: #333;
 }
 
-body {
-    background-color: var(--c-background-color);
-    color: var(--base-font-color);
-
-}
-
-header, footer {
-    background-color: var(--c-background-highlights);
-    color: var(--base-font-color);
-
-}
-
-main{
-    color: var(--base-font-color);
-}
-
-article a{
-    color: var(--c-magenta);
-}
-
-article a:hover {
-    color: var(--c-orange);
-}
-
-article h3, article p{
-    border: 3px solid var(--c-cyan);
-    padding: 10px;
-}
-
-nav ul{
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-
-}
-
-nav ul li{
-    flex: 1;
+header{
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 1rem 0;
     text-align: centre;
-
 }
 
-aside{
-    color: var(--c-green);
+header h1{
+    margin: 0;
 
 }
-aside a {
-    color: var(--c-red);
+nav u1{
+    list-style: circle;
+    padding: 0;
 }
 
-aside a:hover {
-    color: var(--c-blue);
+nav u1 li{
+    display: inline;
+    margin: 0 10px;
+}
+nav u1 li a{
+    color: #ffffff;
+    text-decoration: none;
 }
