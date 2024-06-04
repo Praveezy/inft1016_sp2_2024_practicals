@@ -31,3 +31,21 @@ nav u1 li a{
     color: #ffffff;
     text-decoration: none;
 }
+main{
+    padding: 20px;
+}
+section img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+}
+footer{
+    background-color:#35424a;
+    color: #ffffff;
+    text-align: centre;
+    padding:1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100;
+}
