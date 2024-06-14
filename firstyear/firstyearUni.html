@@ -27,21 +27,27 @@
                 can confidently say my first year has contributed to my character development
             </p>
             <img id="first image" src="first-year.jpg" alt="University">
-            
+            <p id="The begining">This is a picture of my first day in University of South Australia in Mawson Lakes</p>
             <button onclick="DisplayImage1()">life in Unisa</button>
+            <button onclick="DisplayImage2()">Sports life in Unisa</button>
             
         
         </section>
 
        
     </main>
-    <footer>
-        <p>My First year University Journey</p>
-    </footer>
+    
     <script>
         function DisplayImage1(){
             document.getElementById('first image').src = 'life in Unisa.jpg';
+            document.getElementById('The begining').innerHTML=
+                'Splendid University life which can be achieved by socializing with studnets of Unisa:- <a href= "https://unisa.edu.au/unisanews/2021/march/story7/">Visit for reference </a>';
         }
+
+        function DisplayImage2(){
+            document.getElementById('first image').src = 'Sports life in Unisa1.jpg';
+            document.getElementById('The begining').innerHTML=
+                 'Sports is also given equal importance as Education. Diverse range of sports can be played and engaging in sports improves the University life in a great way. <a href= "https://i.unisa.edu.au/students/stem/life/">visit for reference</a>';        }
 
     </script>
     
