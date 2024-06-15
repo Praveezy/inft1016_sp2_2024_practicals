@@ -34,6 +34,9 @@
             
         
         </section>
+        <section>
+            <p id="datetime"></p>
+        </section>
 
        
     </main>
@@ -61,6 +64,14 @@
                 body.setAttribute('data-theme', 'dark');
             }
         }
+
+        function displayDateTime(){
+            const now = new Date();
+            const datetimeStr = now.toLocaleString();
+            document.getElementById('datetime').innerHTML = `Current Date and Time: ${datetimeStr}`;
+        }
+
+        window.onload = displayDateTime;
 
         
         
