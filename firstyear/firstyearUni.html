@@ -5,7 +5,7 @@
     <title>	My page title</title>    
     <link rel="stylesheet" href="style.css">    
 </head>
-<body>
+<body data-theme="light">
     <header>
         <h1>My First Year at University</h1>
         <nav>
@@ -30,6 +30,7 @@
             <p id="The begining">This is a picture of my first day in University of South Australia in Mawson Lakes</p>
             <button onclick="DisplayImage1()">life in Unisa</button>
             <button onclick="DisplayImage2()">Sports life in Unisa</button>
+            <button onclick="toggleTheme()">Toogle Theme</button>
             
         
         </section>
@@ -47,8 +48,24 @@
         function DisplayImage2(){
             document.getElementById('first image').src = 'Sports life in Unisa1.jpg';
             document.getElementById('The begining').innerHTML=
-                 'Sports is also given equal importance as Education. Diverse range of sports can be played and engaging in sports improves the University life in a great way. <a href= "https://i.unisa.edu.au/students/stem/life/">visit for reference</a>';        }
+                 'Sports is also given equal importance as Education. Diverse range of sports can be played and engaging in sports improves the University life in a great way. <a href= "https://i.unisa.edu.au/students/stem/life/">visit for reference</a>';        
+                
+        }
 
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        }
+
+        
+        
+        
+                 
     </script>
     
         
