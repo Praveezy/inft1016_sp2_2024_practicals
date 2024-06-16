@@ -5,7 +5,7 @@
     <title>	My page title</title>    
     <link rel="stylesheet" href="style.css">    
 </head>
-<body data-theme="light">
+<body data-theme="light" onload="GreetingFromQuery()">
     <header>
         <h1 id="greeting">My First Year at University</h1>
         <nav>
@@ -84,6 +84,16 @@
         function updateGreeting(event){
             event.preventDefault();
             const username = document.getElementById('username').value;
+            if (username){
+                const newUr1 = `${window,location.pathname}?username= ${encodeURIComponent(username)}`;
+                window.history.pushState({path: newUr1}, '', newUr1);
+                document.getElementById('greeting').innerText = `Hello, ${username}`;
+            }
+        }
+
+        function GreetingFromQuery(){
+            const  params = new URLSearchParams(window.location.search);
+            const username = params.get('username');
             if (username){
                 document.getElementById('greeting').innerText = `Hello, ${username}`;
             }
