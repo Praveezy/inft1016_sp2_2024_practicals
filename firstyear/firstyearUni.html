@@ -5,7 +5,7 @@
     <title>	My page title</title>    
     <link rel="stylesheet" href="style.css">    
 </head>
-<body data-theme="light" onload="GreetingFromQuery()">
+<body data-theme="light" onload="GreetingFromQuery()" onload="BeginPage()">
     <header>
         <h1 id="greeting">My First Year at University</h1>
         <nav>
@@ -71,6 +71,8 @@
             } else {
                 body.setAttribute('data-theme', 'dark');
             }
+
+            localStorage.setItem('theme', body.getAttribute('data-theme'));
         }
 
         function displayDateTime(){
@@ -98,6 +100,22 @@
                 document.getElementById('greeting').innerText = `Hello, ${username}`;
             }
         }
+
+        function BeginPage(){
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme){
+                document.body.setAttribute('data-theme', storedTheme);
+            }
+
+            GreetingFromQuery();
+            displayDateTime();
+
+        }
+
+
+
+        
+
 
         
         
