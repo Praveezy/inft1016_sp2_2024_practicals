@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">    
 </head>
 <body  onload="BeginPage()">
+    <!--Header section containing the main heading and navigation links-->
     <header>
         <h1 id="greeting">My First Year at University</h1>
         <nav>
@@ -18,6 +19,7 @@
         </nav>      
     </header>
     <main>
+        <!--Section about the first year experience with text and images for users refernce-->>
         <section>
             <h2>About My First Year</h2>
             <p>My first year in my University was
@@ -36,11 +38,15 @@
             
         
         </section>
+        <!--Section displayes the current date and time and it is updated-->>
         <section>
             <p id="datetime"></p>
         </section>
 
+        <!--Section for entering user's name-->
+
         <section>
+
             <h2>Please Enter Your Name</h2>
             <form id="nameform" onsubmit="updateGreeting(event)">
                 <input type="text" id="username" name="username" placeholder="Enter your name">
@@ -52,11 +58,14 @@
     </main>
     
     <script>
+        //function to display the first image and update the caption
         function DisplayImage1(){
             document.getElementById('first image').src = 'life in Unisa.jpg';
             document.getElementById('The begining').innerHTML=
                 'Splendid University life which can be achieved by socializing with studnets of Unisa:- <a href= "https://unisa.edu.au/unisanews/2021/march/story7/">Visit for reference </a>';
         }
+
+        // Function to display the second image
 
         function DisplayImage2(){
             document.getElementById('first image').src = 'Sports life in Unisa1.jpg';
@@ -64,6 +73,8 @@
                  'Sports is also given equal importance as Education. Diverse range of sports can be played and engaging in sports improves the University life in a great way. <a href= "https://i.unisa.edu.au/students/stem/life/">visit for reference</a>';        
                 
         }
+
+        // Function to toggle the theme between light and dark, and save the preference in localStorage
 
         function toggleTheme() {
             const body = document.body;
@@ -77,13 +88,19 @@
             localStorage.setItem('theme', body.getAttribute('data-theme'));
         }
 
+        // Function to display current date and time
+
         function displayDateTime(){
             const now = new Date();
             const datetimeStr = now.toLocaleString();
             document.getElementById('datetime').innerHTML = `Current Date and Time: ${datetimeStr}`;
         }
 
+    
+
         window.onload = displayDateTime;
+
+        // Function to update the greeting message with the user's name and save it in localStorage
 
         function updateGreeting(event){
             event.preventDefault();
@@ -95,6 +112,8 @@
                 document.getElementById('greeting').innerText = `Hello, ${username}`;
             }
         }
+
+        // Function to get the username from the query string or localStorage
 
         function GreetingFromQuery(){
             const  params = new URLSearchParams(window.location.search);
@@ -111,6 +130,7 @@
             
         }
 
+        // Function to initialize the page by setting the theme and greeting from localStorage
         function BeginPage(){
             const storedTheme = localStorage.getItem('theme');
             if (storedTheme){
