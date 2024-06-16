@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta charset="UTf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>To Dost List</h1>
+        <p>Enter task below and manage your to do list.</p>
+        <input type="text" id="taskInput" placeholder="Enter task...">
+        <button onclick="addTask()">Add Task</button>
+        <button onclick="saveTask()">Save Task</button>
+        <button onclick="removeTask()">Remove Task</button>
+        <br><br>
+        <ul id="taskList"></ul>
+        <br>
+        <p>Please Enter password to access the To Do List:</p>
+        <input type="password" id="passwordInput" placeholder="Enter password..." >
+        <button onclick="checkPassword()">Enter</button>
+    </div>
+
+    <script>
+        function addTask(){
+            const taskInput = document.getElementById('taskInput');
+            const taskList = document.getElementBYId('taskList');
+            const task = taskInput.value.trim();
+            if (task !== '') {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <input type="checkbox" onclick="saveTasks()">
+                    <label>${task}</label>
+                `;
+                taskList.appendChild(li);
+                taskInput.value = '';
+                saveTasks();
+            }
+        }
+
+        function saveTasks() {
+            const taskList = document.getElementById('taskList');
+            localStorage.setItem('tasks', taskList.innerHTML);
+        }
+
+        function loadTasks() {
+            const taskList = document.getElementById('taskList');
+            taskList.innerHTML = localStorage.getItem('tasks') || '';
+        }
+        function removeTask() {
+            const taskList = document.getElementById('taskList');
+            const tasks = taskList.getElementsByTagName('li');
+            if (tasks.length > 0) {
+                taskList.removeChild(tasks[tasks.length - 1]);
+                saveTasks();
+            }
+        }
+
+        function checkPassword(){
+            const passwordInput = documnet.getElementById('passowrdInput').value.trim();
+            const correctPassword = 'yourpassword';
+            if (passwordInput === correctPassword){
+                alert('The Passowrd is correct');
+                document.getElementById('taskInput').removeAttribute('disabled');
+                document.querySelectorAll('button').forEach(button => button.removeAttribute('disabled'));
+                loadTask();
+            }else{
+                alert('Incorrect password')
+
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
