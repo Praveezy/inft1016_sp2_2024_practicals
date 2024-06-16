@@ -5,7 +5,7 @@
     <title>	My page title</title>    
     <link rel="stylesheet" href="style.css">    
 </head>
-<body data-theme="light" onload="GreetingFromQuery()" onload="BeginPage()">
+<body  onload="BeginPage()">
     <header>
         <h1 id="greeting">My First Year at University</h1>
         <nav>
@@ -87,6 +87,7 @@
             event.preventDefault();
             const username = document.getElementById('username').value;
             if (username){
+                localStorage.setItem('username', username);
                 const newUr1 = `${window,location.pathname}?username= ${encodeURIComponent(username)}`;
                 window.history.pushState({path: newUr1}, '', newUr1);
                 document.getElementById('greeting').innerText = `Hello, ${username}`;
@@ -96,12 +97,16 @@
         function GreetingFromQuery(){
             const  params = new URLSearchParams(window.location.search);
             let username = params.get('username');
-            if (!username){
-                username = localStorage.getItem('username');
-            }
             if (username){
+                localStorage.setItem('username', username);
                 document.getElementById('greeting').innerText = `Hello, ${username}`;
+            }else {
+                username = localStorage.getItem('username');
+                if (username){
+                    document.getElementById('greeting').innerText = `Hello, ${username}`;
+                 }
             }
+            
         }
 
         function BeginPage(){
@@ -114,6 +119,7 @@
             displayDateTime();
 
         }
+        
 
 
 
